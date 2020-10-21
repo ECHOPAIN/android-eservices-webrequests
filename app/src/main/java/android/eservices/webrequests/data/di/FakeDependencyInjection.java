@@ -4,7 +4,6 @@ import android.content.Context;
 import android.eservices.webrequests.data.api.BookDisplayService;
 import android.eservices.webrequests.data.db.BookDatabase;
 import android.eservices.webrequests.data.repository.bookdisplay.BookDisplayDataRepository;
-import android.eservices.webrequests.data.repository.bookdisplay.BookDisplayRepository;
 import android.eservices.webrequests.data.repository.bookdisplay.local.BookDisplayLocalDataSource;
 import android.eservices.webrequests.data.repository.bookdisplay.mapper.BookToBookEntityMapper;
 import android.eservices.webrequests.data.repository.bookdisplay.remote.BookDisplayRemoteDataSource;
@@ -34,7 +33,7 @@ public class FakeDependencyInjection {
     private static BookDisplayService bookDisplayService;
     private static Retrofit retrofit;
     private static Gson gson;
-    private static BookDisplayRepository bookDisplayRepository;
+    private static BookDisplayDataRepository bookDisplayRepository;
     private static BookDatabase bookDatabase;
     private static Context applicationContext;
     private static ViewModelFactory viewModelFactory;
@@ -47,7 +46,7 @@ public class FakeDependencyInjection {
     }
 
 
-    public static BookDisplayRepository getBookDisplayRepository() {
+    public static BookDisplayDataRepository getBookDisplayRepository() {
         if (bookDisplayRepository == null) {
             bookDisplayRepository = new BookDisplayDataRepository(
                     new BookDisplayLocalDataSource(getBookDatabase()),
