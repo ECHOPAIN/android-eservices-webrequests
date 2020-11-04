@@ -1,9 +1,10 @@
 package android.eservices.webrequests.data.api.model;
 
+import androidx.room.Entity;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
-
 public class BookInfo {
 
     private String title;
