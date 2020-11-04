@@ -5,14 +5,12 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity
+//reponse json de l'api
 public class Book {
     public void setId(String id) {
         this.id = id;
     }
 
-    @PrimaryKey
-    @NonNull
     private String id;
 
     public void setVolumeInfo(BookInfo volumeInfo) {
@@ -22,8 +20,6 @@ public class Book {
     public void setFavorite(boolean favorite) {
         isFavorite = favorite;
     }
-
-    @Ignore
     private BookInfo volumeInfo;
     private boolean isFavorite;
 

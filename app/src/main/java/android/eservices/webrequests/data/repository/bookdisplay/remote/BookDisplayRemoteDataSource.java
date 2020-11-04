@@ -20,4 +20,8 @@ public class BookDisplayRemoteDataSource {
     public Single<BookSearchResponse> searchBooks(@Path("search-terms") String searchTerms){
         return bookDisplayService.searchBooks(searchTerms);
     }
+
+    public Single<Book> getBookDetails(@Path("search-terms") String searchTerms){
+        return bookDisplayService.getBook(searchTerms);
+    }
 }

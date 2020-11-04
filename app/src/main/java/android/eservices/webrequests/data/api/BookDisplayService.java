@@ -16,4 +16,7 @@ import retrofit2.http.Query;
 public interface BookDisplayService {
     @GET("https://www.googleapis.com/books/v1/volumes?key="+ BookApplication.API_KEY)
     Single<BookSearchResponse> searchBooks(@Query("q") String searchTerms);
+
+    @GET("https://www.googleapis.com/books/v1/volume/{bookId}?key="+ BookApplication.API_KEY)
+    Single<Book> getBook(@Path("bookId") String bookId);
 }

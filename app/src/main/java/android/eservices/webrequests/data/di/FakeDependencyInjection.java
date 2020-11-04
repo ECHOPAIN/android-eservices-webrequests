@@ -97,7 +97,7 @@ public class FakeDependencyInjection {
     public static BookDatabase getBookDatabase() {
         if (bookDatabase == null) {
             bookDatabase = Room.databaseBuilder(applicationContext,
-                    BookDatabase.class, "book-database").build();
+                    BookDatabase.class, "book-database").allowMainThreadQueries().build();
         }
         return bookDatabase;
     }

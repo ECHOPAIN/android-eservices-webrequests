@@ -1,6 +1,7 @@
 package android.eservices.webrequests.presentation.bookdisplay.search.fragment;
 
 import android.eservices.webrequests.R;
+import android.eservices.webrequests.data.api.model.Book;
 import android.eservices.webrequests.data.di.FakeDependencyInjection;
 import android.eservices.webrequests.presentation.bookdisplay.search.adapter.BookActionInterface;
 import android.eservices.webrequests.presentation.bookdisplay.search.adapter.BookAdapter;
@@ -131,6 +132,11 @@ public class SearchFragment extends Fragment implements BookActionInterface {
     @Override
     public void onFavoriteToggle(String bookId, boolean isFavorite) {
         //Handle add and deletion to favorites
+        if(isFavorite){
+            bookSearchViewModel.addFavorite(bookId);
+        }else{
+            bookSearchViewModel.deleteFavorite(bookId);
+        }
     }
 
 }

@@ -1,5 +1,6 @@
 package android.eservices.webrequests.presentation.viewmodel;
 
+import android.eservices.webrequests.data.api.model.Book;
 import android.eservices.webrequests.data.api.model.BookSearchResponse;
 import android.eservices.webrequests.data.repository.bookdisplay.BookDisplayDataRepository;
 import android.eservices.webrequests.presentation.bookdisplay.search.adapter.BookViewItem;
@@ -67,4 +68,11 @@ public class BookSearchViewModel extends ViewModel {
         isDataLoading.setValue(false);
     }
 
+    public void addFavorite(String bookId) {
+        bookDisplayRepository.addFavorite(bookId);
+    }
+
+    public void deleteFavorite(String bookId) {
+        bookDisplayRepository.deleteFavorite(bookId);
+    }
 }
