@@ -1,5 +1,7 @@
 package android.eservices.webrequests.data.api;
 
+import android.app.Application;
+import android.eservices.webrequests.BookApplication;
 import android.eservices.webrequests.data.api.model.Book;
 import android.eservices.webrequests.data.api.model.BookSearchResponse;
 
@@ -9,8 +11,9 @@ import io.reactivex.Single;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 public interface BookDisplayService {
-    @GET("https://www.googleapis.com/books/v1/volumes?q={search-terms}&key=AIzaSyDd5JRbMCES04pFjIKqu4s21EjN9Qop_OE")
-    Single<BookSearchResponse> searchBooks(@Path("search-terms") String searchTerms);
+    @GET("https://www.googleapis.com/books/v1/volumes?key="+ BookApplication.API_KEY)
+    Single<BookSearchResponse> searchBooks(@Query("q") String searchTerms);
 }

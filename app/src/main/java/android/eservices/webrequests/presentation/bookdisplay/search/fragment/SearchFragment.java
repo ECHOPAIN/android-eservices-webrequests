@@ -112,6 +112,7 @@ public class SearchFragment extends Fragment implements BookActionInterface {
                         @Override
                         public void run() {
                             bookSearchViewModel.searchBooks(s);
+                            System.out.println(bookSearchViewModel.getBooks());
                         }
                     }, sleep);
                 }
